@@ -46,13 +46,6 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
 TARGET_NO_BOOTLOADER := true
 
-# Crypto
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-TARGET_HW_DISK_ENCRYPTION := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE := true
-
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
@@ -93,6 +86,12 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 AB_OTA_UPDATER := false
+
+# Crypto
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
 
 # TWRP specific build flags
 TARGET_OTA_ASSERT_DEVICE := lavender
